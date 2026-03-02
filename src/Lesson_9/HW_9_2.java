@@ -17,7 +17,7 @@ import Lesson_9.person_HW.Salary;
 
  */
 
-public class HW_9_1 {
+public class HW_9_2 {
     public static void main(String[] args) {
 
 
@@ -60,5 +60,9 @@ public class HW_9_1 {
         int total = salary.getSum(employees);
         System.out.println(total);
 
+        Block b = new Block(new int[]{2,2,2});
+        System.out.println(b.getHeight());
+        System.out.println(b.getVolume());
+        System.out.println(b.getSurfaceArea());
     }
 }
