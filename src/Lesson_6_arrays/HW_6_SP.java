@@ -1,6 +1,8 @@
 package Lesson_6_arrays;
 
 import java.lang.String;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class HW_6_SP {
 
@@ -12,11 +14,13 @@ String s = “Перестановочный алгоритм быстрого �
 Для указанной строки ответ будет “ооооо” (или в столбик)
      */
 //        String s = "Перестановочный алгоритм быстрого действия";
-//        for (int i =0; i < s.length(); i++){
-//            if (s.charAt(i) == 'о'){
-//                System.out.print(s.charAt(i));
+//        for (int i = 0; i < s.length(); i++){
+//            char c = s.charAt(i);
+//            if (c == 'о'){
+//                System.out.print(c);
 //            }
 //        }
+//        System.out.println();
 
         /*
         5. Дана строка:
@@ -24,14 +28,27 @@ String s = “Перевыборы выбранного президента”;
 необходимо подсчитать количество букв “е” в строке.
 Для указанной строки ответ будет 4.
          */
-//        String s = "Перевыборы выбранного президента";
-//        int sum = 0;
+        String s = "Перевыборы выбранного президента";
+//      /*1*/
+//        int count = 0;
 //        for (int i = 0; i <s.length(); i++){
 //            if (s.charAt(i) == 'е'){
-//                sum = sum +1;
+//                count++;
 //            }
 //        }
-//        System.out.println(sum);
+//        System.out.println(count);
+
+        /*2*/
+//        int count = 0;
+//        int searchFrom = 0;
+//        int foundAt = s.indexOf('е');
+//        while (foundAt != -1) {
+//            count++;
+//            searchFrom = foundAt + 1;
+//            foundAt = s.indexOf('е', searchFrom);
+//        }
+//        System.out.println(count);
+
         /*
         6. Дан массив:
 int[] array = {9, 2, 6, 4, 5, 12, 7, 8, 6};
@@ -41,9 +58,11 @@ int[] array = {9, 2, 6, 4, 5, 12, 7, 8, 6};
 //
 //        int sum = 0;
 //        for (int i = 0; i < array.length; i++){
-//            sum = sum + array[i];
+//            sum += array[i] ;
 //        }
 //        System.out.println("Sum: " + sum);
+
+
         /*
         7. Дан массив:
 int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
@@ -57,9 +76,8 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
 
 //        int sum = 0;
 //        for (int i =0; i < array.length; i++){
-//            int[] sub = array[i];
-//            for(int j = 0; j < sub.length; j++){
-//                sum += sub[j];
+//            for(int j = 0; j < array[i].length; j++){
+//                sum += array[i][j];
 //            }
 //        }
 //        System.out.println("Total sum: " +sum);
@@ -75,6 +93,7 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
 //                {-1, -2, -3, -4},
 //                {-5, -6}};
 //
+        /*1*/
 //        int max = array[0][0];
 //        for (int i = 0; i < array.length; i++){
 //            int[] array1 = array[i];
@@ -87,6 +106,16 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
 //        }
 //        System.out.println("Max: " + max);
 
+        /*2*/
+//        int max = Integer.MIN_VALUE;
+//        for (int i = 0; i < array.length; i++) {
+//            for (int j = 0; j < array[i].length; j++) {
+//                int element = array[i][j];
+//                if (element > max) max = element;
+//            }
+//        }
+//        System.out.println(max);
+
         /*
         9. необходимо вывести количество элементов в массиве.
          */
@@ -95,7 +124,7 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
 //                {6, 7, 8, 9},
 //                {-1, -2, -3, -4},
 //                {-5, -6}};
-//
+
 //        int totalCount = 0;
 //        for (int i = 0; i < array.length; i++){
 //            int count = array[i].length;
@@ -105,13 +134,14 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
 //        System.out.println("Total count: " + totalCount);
 //        System.out.println("Total rows: " + array.length);
 
+
         /*
         10. Даны температуры воздуха за несколько дней:
         int[] temps = {18, 20, 17, 19, 16, 15, 21};
         Необходимо посчитать сколько раз за эти дни температура падала в сравнении с предыдущим днем.
          */
 
-//        int[] temps = {18, 20, 17, 19, 16, 15, 21};
+        int[] temps = {18, 20, 17, 19, 16, 15, 21};
 //
 //
 //            int sum = 0;
@@ -138,6 +168,12 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
 //        }
 //        System.out.println("countBelowAverage: " + countBelowAverage);// температура падала ниже среднего - не то решала
 //
+
+//        if (temps.length < 1) {
+//            System.out.println("Not enough data");
+//            return;
+//        }
+//
 //        int countLower = 0;
 //        for (int i = 1; i < temps.length; i++){
 //            if (temps[i] < temps[i - 1]){
@@ -145,6 +181,7 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
 //            }
 //        }
 //        System.out.println("Tемпература падала в сравнении с предыдущим днем " + countLower + " раз");
+
 
         /*  Дан массив:
         int[] arr = {1, 2, 3, 4, 5};
@@ -155,12 +192,21 @@ int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {-1, -2, -3, -4}, {-5, -6}};
          */
         int[] arr = {1, 2, 3, 4, 5};
 
-        int first = arr [0];
-        for( int i = 0; i < arr.length - 1; i++) {
-            arr[i] = arr[i + 1];// берём значение справа
-            System.out.print(arr[i]);
+/*1*/
+//        int[] result = new int [arr.length];
+//        for (int i = 1; i < arr.length; i++) {
+//            result[i - 1] = arr[i];
+//        }
+//        result[arr.length - 1] = arr[0];
+//        System.out.println(Arrays.toString(result));
+
+/*2*/
+        int tmp = arr[0];
+
+        for(int i = 1; i < arr.length; i++) {
+            arr[i - 1] = arr[i];
         }
-        arr[arr.length - 1]  = first; // ставим первый элемент в конец
-        System.out.println(first);
+        arr[arr.length-1] = tmp;
+        System.out.println(Arrays.toString(arr));
     }
 }
