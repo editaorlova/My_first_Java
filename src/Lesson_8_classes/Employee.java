@@ -10,6 +10,6 @@ public class Employee {
 
     String name;
     int age;
-    String sex;
+    String gender;
     int salaryDay;
 }

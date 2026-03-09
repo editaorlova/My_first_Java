@@ -9,13 +9,13 @@ public class SalaryUtils {
         Employee ivanov = new Employee();
         ivanov.name = "Ivanov";
         ivanov.age = 27;
-        ivanov.sex = "Male";
+        ivanov.gender = "Male";
         ivanov.salaryDay = 90;
 
         Employee petrova = new Employee();
         petrova.name = "Petrova";
         petrova.age = 30;
-        petrova.sex = "Female";
+        petrova.gender = "Female";
         petrova.salaryDay = 80;
 
         Month january = new Month();
