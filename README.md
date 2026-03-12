@@ -1,1 +1,1 @@
-Homework of java lessons for QA
+Studying Java practice for QA
